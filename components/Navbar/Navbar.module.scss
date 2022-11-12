@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+.fake-nav {
+  display: flex;
+  font-family: "VT323", monospace;
+  font-size: 1.2rem;
+
+  .fake-nav-items {
+    display: flex;
+
+    .fake-nav-item {
+      padding-right: 0.4em;
+      color: hsl(336, 9%, 11%);
+
+      .underline {
+        text-decoration: underline;
+      }
+      &:hover {
+        cursor: pointer;
+        color: hsl(336, 9%, 31%);
+      }
+    }
+
+    .fake-nav-item:first-child {
+      padding-left: 0.4em;
+    }
+  }
+}
