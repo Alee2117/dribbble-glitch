@@ -6,9 +6,16 @@
   padding-block: 3px;
 }
 
-  .option {
-    background-color: hsl(0, 0%, 89%);
-    color: hsl(320, 9%, 7%);
-    margin-right: 5px;
-  }
+.option {
+  background-color: hsl(0, 0%, 89%);
+  color: hsl(320, 9%, 7%);
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em;
 
+  &:hover {
+    cursor: pointer;
+  }
+}

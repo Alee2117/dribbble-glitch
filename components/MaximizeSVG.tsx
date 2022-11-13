@@ -4,8 +4,8 @@ function MaximizeSVG() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width=".7em"
+      height=".7em"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 512 512"
     >

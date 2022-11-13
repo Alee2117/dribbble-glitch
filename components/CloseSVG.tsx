@@ -4,10 +4,10 @@ function CloseSVG() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width=".7em"
+      height=".7em"
       preserveAspectRatio="xMidYMid meet"
-      viewBox="0 0 21 18"
+      viewBox="0 0 23 18"
     >
       <path
         fill="currentColor"

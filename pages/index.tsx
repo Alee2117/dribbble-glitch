@@ -11,6 +11,10 @@ export default function Home() {
         <WindowOptions />
        <Navbar />
       </div>
+      <div className={styles["tiny-window"]}>
+        <WindowOptions />
+       <Navbar />
+      </div>
     </div>
   )
 }
