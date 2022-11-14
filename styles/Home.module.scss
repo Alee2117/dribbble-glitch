@@ -3,6 +3,11 @@
   src: url("../public/fonts/Glipervelz-Origy\ FULL.ttf");
 }
 
+@font-face {
+  font-family: "alien-two";
+  src: url("../public//fonts/SithAF.otf");
+}
+
 .container {
   min-height: 100vh;
   background-color: hsl(0, 0%, 89%);
@@ -14,12 +19,64 @@
     border-left: 2px solid hsl(220, 2%, 30%);
     border-right: 2px solid hsl(220, 2%, 30%);
     border-bottom: 2px solid hsl(220, 2%, 30%);
-    // font-family: "alien-one";
+    
     grid-column: 3 / 11;
     grid-row: 3 / 11;
     background-color: hsl(0, 0%, 89%);
     margin-left: 1.5rem;
     margin-top: -3rem;
+    position: relative;
+
+    .text-content {
+      height: 94%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      
+      .marquee-one {
+        height: 100%;
+        font-family: "alien-one";
+
+        &::before {
+          background: linear-gradient(
+            180deg,
+            #0000 0%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0) 0%
+          );
+        }
+        &::after {
+          background: linear-gradient(
+            180deg,
+            #0000 0%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0) 0%
+          );
+        }
+      }
+
+      .marquee-two {
+        height: 100%;
+        grid-column-start: 3;
+        font-family: "alien-two";
+
+        &::before {
+          background: linear-gradient(
+            180deg,
+            #0000 0%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0) 0%
+          );
+        }
+        &::after {
+          background: linear-gradient(
+            180deg,
+            #0000 0%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0) 0%
+          );
+        }
+      }
+    }
   }
 
   .tiny-window {
@@ -31,6 +88,7 @@
     grid-row: 2/4;
     background-color: hsl(0, 0%, 89%);
     overflow: hidden;
+    position: relative;
   }
 
   .md-text-window-one {
@@ -77,7 +135,7 @@
     background-color: hsl(0, 0%, 89%);
     overflow: hidden;
     margin-top: 1rem;
-    margin-bottom: 4.2rem;
+    margin-bottom: 2.2rem;
     position: relative;
 
     .glitch-text {
@@ -91,9 +149,11 @@
     border-bottom: 2px solid hsl(0, 0%, 7%);
     // font-family: "alien-one";
     grid-column: 4/7;
-    grid-row: 6/9;
+    grid-row: 5/9;
     background-color: hsl(0, 0%, 7%);
     margin-right: 3rem;
+    margin-block: 3rem;
+    position: relative;
   }
 }
 

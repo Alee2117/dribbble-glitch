@@ -8,12 +8,10 @@ function WindowOptions() {
   return (
     <div className={styles.container}>
       <button className={styles.option}>
-        {" "}
-        <MinimizeSvg />{" "}
+        <MinimizeSvg />
       </button>
       <button className={styles.option}>
-        {" "}
-        <MaximizeSVG />{" "}
+        <MaximizeSVG />
       </button>
       <button className={styles.option}>
         <CloseSVG />
