@@ -82,7 +82,7 @@ export default function Home() {
       >
         <WindowOptions />
         <Navbar />
-        <div className={styles["glitch-text"]}>HERE</div>
+        <div className={styles["glitch-text"]}><span className={styles["here"]}>HERE</span></div>
       </motion.div>
 
       <motion.div
@@ -93,7 +93,7 @@ export default function Home() {
       >
         <WindowOptions />
         <Navbar />
-        <div className={styles["glitch-text"]}>STARTS</div>
+        <div className={styles["glitch-text"]}><span className={styles["starts"]}>STARTS</span></div>
       </motion.div>
       <motion.div
         className={styles["md-text-window-one"]}
@@ -103,7 +103,7 @@ export default function Home() {
       >
         <WindowOptions />
         <Navbar />
-        <div className={styles["glitch-text"]}>CHANGE</div>
+        <div className={styles["glitch-text"]}><span data-text="CHANGE" className={styles["change"]}>CHANGE</span></div>
       </motion.div>
       <motion.div
         className={styles["black-window"]}

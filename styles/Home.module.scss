@@ -1,3 +1,7 @@
+$primaryColor: hsl(0, 0%, 13%);
+$secondaryColor: hsl(0, 0%, 89%);
+$steps: 20;
+
 @font-face {
   font-family: "alien-one";
   src: url("../public/fonts/Glipervelz-Origy\ FULL.ttf");
@@ -204,4 +208,58 @@
   transform: translate(-50%, -50%);
   font-weight: bold;
   padding-top: 1.5rem;
+
+  .change {
+    position: relative;
+    margin: 0 auto;
+    color: $primaryColor;
+    font-size: 80px;
+    font-family: "Exo", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    transform: scale3d(1, 1, 1);
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      background: $secondaryColor;
+      color: $primaryColor;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    &::before {
+      left: 7px;
+      text-shadow: 1px 5 green;
+      animation: glitch-effect 3s infinite linear alternate-reverse;
+    }
+
+    &::after {
+      left: 3px;
+      text-shadow: -1px 0 red;
+      animation: glitch-effect 2s infinite linear alternate-reverse;
+    }
+  }
+
+  @keyframes glitch-effect {
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
+  }
+
+  .starts {
+    color: blue;
+  }
+
+  .here {
+    color: green;
+  }
 }
