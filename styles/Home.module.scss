@@ -19,7 +19,7 @@
     border-left: 2px solid hsl(220, 2%, 30%);
     border-right: 2px solid hsl(220, 2%, 30%);
     border-bottom: 2px solid hsl(220, 2%, 30%);
-    
+
     grid-column: 3 / 11;
     grid-row: 3 / 11;
     background-color: hsl(0, 0%, 89%);
@@ -31,7 +31,7 @@
       height: 94%;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      
+
       .marquee-one {
         height: 100%;
         font-family: "alien-one";
@@ -57,7 +57,7 @@
       .marquee-two {
         height: 100%;
         grid-column-start: 3;
-        font-family: "alien-two";
+        font-family: "alien-one";
 
         &::before {
           background: linear-gradient(
@@ -140,6 +140,46 @@
 
     .glitch-text {
       font-size: 8rem;
+    }
+  }
+
+  .md-blank-window {
+    border-left: 2px solid hsl(220, 2%, 30%);
+    border-right: 2px solid hsl(220, 2%, 30%);
+    border-bottom: 2px solid hsl(220, 2%, 30%);
+    // font-family: "alien-one";
+    grid-column: 6/8;
+    grid-row: 6/11;
+    background-color: hsl(0, 0%, 89%);
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 2.2rem;
+    position: relative;
+
+    .text-content {
+      height: 94%;
+
+      .marquee-three {
+        height: 100%;
+        font-family: "alien-two";
+
+        &::before {
+          background: linear-gradient(
+            180deg,
+            #0000 0%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0) 0%
+          );
+        }
+        &::after {
+          background: linear-gradient(
+            180deg,
+            #0000 0%,
+            rgba(255, 255, 255, 0) 80%,
+            rgba(255, 255, 255, 0) 0%
+          );
+        }
+      }
     }
   }
 
