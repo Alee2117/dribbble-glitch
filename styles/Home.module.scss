@@ -198,6 +198,45 @@ $steps: 20;
     margin-right: 3rem;
     margin-block: 3rem;
     position: relative;
+    transform: scale(-1, 1) !important;
+
+    video {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .glitch-text {
+      font-size: 8rem;
+
+      .rise {
+        color: transparent;
+        text-shadow: 0 0 20px hsl(0, 0%, 90%);
+        position: relative;
+        letter-spacing: 20px;
+
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          top: 42%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-shadow: 12px 0 30px hsl(285, 4%, 20%);
+          -webkit-text-stroke-color: initial;
+          font-size: 12rem;
+          letter-spacing: 20px;
+          color: transparent;
+        }
+
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          text-shadow: -12px 0 18px hsl(0, 0%, 100%);
+        }
+      }
+    }
   }
 }
 
@@ -215,7 +254,7 @@ $steps: 20;
     color: $primaryColor;
     font-size: 80px;
     font-family: "Exo", sans-serif;
-    font-weight: 600;
+    font-size: 7rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.01em;
@@ -247,7 +286,111 @@ $steps: 20;
     }
   }
 
-  @keyframes glitch-effect {
+  .starts {
+    animation: glitch 1s linear infinite;
+    position: relative;
+    font-size: 8rem;
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      animation: glitchTop 1s linear infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    &::after {
+      animation: glitchBotom 1.5s linear infinite;
+      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+
+    @keyframes glitch {
+      2%,
+      64% {
+        transform: translate(2px, 0) skew(0deg);
+      }
+      4%,
+      60% {
+        transform: translate(-2px, 0) skew(0deg);
+      }
+      62% {
+        transform: translate(0, 0) skew(5deg);
+      }
+    }
+
+    @keyframes glitchTop {
+      2%,
+      64% {
+        transform: translate(2px, -2px);
+      }
+      4%,
+      60% {
+        transform: translate(-2px, 2px);
+      }
+      62% {
+        transform: translate(13px, -1px) skew(-13deg);
+      }
+    }
+
+    @keyframes glitchBotom {
+      2%,
+      64% {
+        transform: translate(-2px, 0);
+      }
+      4%,
+      60% {
+        transform: translate(-2px, 0);
+      }
+      62% {
+        transform: translate(-22px, 5px) skew(21deg);
+      }
+    }
+  }
+
+  .here {
+    color: black;
+    font-size: 100px;
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    font-size: 10rem;
+
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      text-shadow: -1px 0 red;
+      top: 0;
+      color: white;
+      background: hsl(0, 0%, 89%);
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: noise-anim 2s infinite linear alternate-reverse;
+    }
+
+  
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      left: -2px;
+      text-shadow: 1px 0 blue;
+      top: 0;
+      color: white;
+      background: hsl(0, 0%, 89%);
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: noise-anim-2 3s infinite linear alternate-reverse;
+    }
+  }
+
+  @keyframes noise-anim {
+    $steps: 20;
     @for $i from 0 through $steps {
       #{percentage($i*(1/$steps))} {
         clip: rect(random(100) + px, 9999px, random(100) + px, 0);
@@ -255,11 +398,20 @@ $steps: 20;
     }
   }
 
-  .starts {
-    color: blue;
+  @keyframes noise-anim-2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
   }
 
-  .here {
-    color: green;
+  @keyframes glitch-effect {
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
   }
 }

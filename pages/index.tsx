@@ -67,9 +67,9 @@ export default function Home() {
             delay={60}
             marqueeContainerClassName={styles["marquee-three"]}
             marqueeItems={[
-             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tristique senectus et netus et malesuada fames ac turpis. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Molestie at elementum eu facilisis sed odio morbi quis commodo. Pellentesque eu tincidunt tortor aliquam. Suscipit adipiscing bibendum est ultricies integer quis. Ac turpis egestas maecenas pharetra convallis. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Urna condimentum mattis pellentesque id nibh. Sit amet est placerat in. Pretium fusce id velit ut tortor. Ut diam quam nulla porttitor. Lacus vestibulum sed arcu non odio euismod lacinia. Erat imperdiet sed euismod nisi porta lorem mollis. Cursus risus at ultrices mi tempus imperdiet nulla malesuada. Blandit volutpat maecenas volutpat blandit aliquam etiam erat.Diam phasellus vestibulum lorem sed risus. Odio facilisis mauris sit amet massa vitae. Massa tincidunt dui ut ornare. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Eu lobortis elementum nibh tellus molestie nunc. Integer enim neque volutpat ac. Quis lectus nulla at volutpat diam. Dapibus ultrices in iaculis nunc sed augue. Nam aliquam sem et tortor. Tellus in metus vulputate eu scelerisque felis. Eu facilisis sed odio morbi quis commodo odio aenean. Lectus arcu bibendum at varius. Tellus elementum sagittis vitae et leo duis ut diam. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Viverra orci sagittis eu volutpat odio facilisis. Nunc scelerisque viverra mauris in aliquam. Scelerisque felis imperdiet proin fermentum leo. Quisque id diam vel quam.",
-             "Lorem ipsum dolot sit amet consceteur elit ad me jhalo mine ",
-             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tristique senectus et netus et malesuada fames ac turpis. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Molestie at elementum eu facilisis sed odio morbi quis commodo. Pellentesque eu tincidunt tortor aliquam. Suscipit adipiscing bibendum est ultricies integer quis. Ac turpis egestas maecenas pharetra convallis. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Urna condimentum mattis pellentesque id nibh. Sit amet est placerat in. Pretium fusce id velit ut tortor. Ut diam quam nulla porttitor. Lacus vestibulum sed arcu non odio euismod lacinia. Erat imperdiet sed euismod nisi porta lorem mollis. Cursus risus at ultrices mi tempus imperdiet nulla malesuada. Blandit volutpat maecenas volutpat blandit aliquam etiam erat.Diam phasellus vestibulum lorem sed risus. Odio facilisis mauris sit amet massa vitae. Massa tincidunt dui ut ornare. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Eu lobortis elementum nibh tellus molestie nunc. Integer enim neque volutpat ac. Quis lectus nulla at volutpat diam. Dapibus ultrices in iaculis nunc sed augue. Nam aliquam sem et tortor. Tellus in metus vulputate eu scelerisque felis. Eu facilisis sed odio morbi quis commodo odio aenean. Lectus arcu bibendum at varius. Tellus elementum sagittis vitae et leo duis ut diam. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Viverra orci sagittis eu volutpat odio facilisis. Nunc scelerisque viverra mauris in aliquam. Scelerisque felis imperdiet proin fermentum leo. Quisque id diam vel quam."
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tristique senectus et netus et malesuada fames ac turpis. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Molestie at elementum eu facilisis sed odio morbi quis commodo. Pellentesque eu tincidunt tortor aliquam. Suscipit adipiscing bibendum est ultricies integer quis. Ac turpis egestas maecenas pharetra convallis. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Urna condimentum mattis pellentesque id nibh. Sit amet est placerat in. Pretium fusce id velit ut tortor. Ut diam quam nulla porttitor. Lacus vestibulum sed arcu non odio euismod lacinia. Erat imperdiet sed euismod nisi porta lorem mollis. Cursus risus at ultrices mi tempus imperdiet nulla malesuada. Blandit volutpat maecenas volutpat blandit aliquam etiam erat.Diam phasellus vestibulum lorem sed risus. Odio facilisis mauris sit amet massa vitae. Massa tincidunt dui ut ornare. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Eu lobortis elementum nibh tellus molestie nunc. Integer enim neque volutpat ac. Quis lectus nulla at volutpat diam. Dapibus ultrices in iaculis nunc sed augue. Nam aliquam sem et tortor. Tellus in metus vulputate eu scelerisque felis. Eu facilisis sed odio morbi quis commodo odio aenean. Lectus arcu bibendum at varius. Tellus elementum sagittis vitae et leo duis ut diam. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Viverra orci sagittis eu volutpat odio facilisis. Nunc scelerisque viverra mauris in aliquam. Scelerisque felis imperdiet proin fermentum leo. Quisque id diam vel quam.",
+              "Lorem ipsum dolot sit amet consceteur elit ad me jhalo mine ",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tristique senectus et netus et malesuada fames ac turpis. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Molestie at elementum eu facilisis sed odio morbi quis commodo. Pellentesque eu tincidunt tortor aliquam. Suscipit adipiscing bibendum est ultricies integer quis. Ac turpis egestas maecenas pharetra convallis. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Urna condimentum mattis pellentesque id nibh. Sit amet est placerat in. Pretium fusce id velit ut tortor. Ut diam quam nulla porttitor. Lacus vestibulum sed arcu non odio euismod lacinia. Erat imperdiet sed euismod nisi porta lorem mollis. Cursus risus at ultrices mi tempus imperdiet nulla malesuada. Blandit volutpat maecenas volutpat blandit aliquam etiam erat.Diam phasellus vestibulum lorem sed risus. Odio facilisis mauris sit amet massa vitae. Massa tincidunt dui ut ornare. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Eu lobortis elementum nibh tellus molestie nunc. Integer enim neque volutpat ac. Quis lectus nulla at volutpat diam. Dapibus ultrices in iaculis nunc sed augue. Nam aliquam sem et tortor. Tellus in metus vulputate eu scelerisque felis. Eu facilisis sed odio morbi quis commodo odio aenean. Lectus arcu bibendum at varius. Tellus elementum sagittis vitae et leo duis ut diam. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Viverra orci sagittis eu volutpat odio facilisis. Nunc scelerisque viverra mauris in aliquam. Scelerisque felis imperdiet proin fermentum leo. Quisque id diam vel quam.",
             ]}
           />
         </div>
@@ -82,7 +82,9 @@ export default function Home() {
       >
         <WindowOptions />
         <Navbar />
-        <div className={styles["glitch-text"]}><span className={styles["here"]}>HERE</span></div>
+        <div className={styles["glitch-text"]}>
+          <span data-text="HERE" className={styles["here"]}>HERE</span>
+        </div>
       </motion.div>
 
       <motion.div
@@ -93,7 +95,9 @@ export default function Home() {
       >
         <WindowOptions />
         <Navbar />
-        <div className={styles["glitch-text"]}><span className={styles["starts"]}>STARTS</span></div>
+        <div className={styles["glitch-text"]}>
+          <span data-text="STARTS" className={styles["starts"]}>STARTS</span>
+        </div>
       </motion.div>
       <motion.div
         className={styles["md-text-window-one"]}
@@ -103,14 +107,25 @@ export default function Home() {
       >
         <WindowOptions />
         <Navbar />
-        <div className={styles["glitch-text"]}><span data-text="CHANGE" className={styles["change"]}>CHANGE</span></div>
+        <div className={styles["glitch-text"]}>
+          <span data-text="CHANGE" className={styles["change"]}>
+            CHANGE
+          </span>
+        </div>
       </motion.div>
       <motion.div
         className={styles["black-window"]}
         initial={{ opacity: 0, scale: 0.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 2.5 }}
-      ></motion.div>
+      >
+        <video loop autoPlay muted src="/video/noise.mp4"></video>
+        <div className={styles["glitch-text"]}>
+          <span data-text="RISE" className={styles["rise"]}>
+            RISE
+          </span>
+        </div>
+      </motion.div>
     </div>
   )
 }
