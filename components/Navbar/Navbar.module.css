@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.fake-nav {
+  display: flex;
+  font-family: "VT323", monospace;
+  font-size: 1.2rem;
+}
+.fake-nav .fake-nav-items {
+  display: flex;
+}
+.fake-nav .fake-nav-items .fake-nav-item {
+  padding-right: 0.9em;
+  color: hsl(336deg, 9%, 31%);
+}
+.fake-nav .fake-nav-items .fake-nav-item .underline {
+  text-decoration: underline;
+}
+.fake-nav .fake-nav-items .fake-nav-item:hover {
+  cursor: pointer;
+  color: hsl(336deg, 9%, 31%);
+}
+.fake-nav .fake-nav-items .fake-nav-item:first-child {
+  padding-left: 0.8em;
+}/*# sourceMappingURL=Navbar.module.css.map */
