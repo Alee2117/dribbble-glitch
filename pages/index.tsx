@@ -51,9 +51,10 @@ export default function Home() {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <WindowOptions />
-        <Navbar/>
+        <Navbar />
         <div className={styles["text-content"]}>
-          WORKING <br/> TOGETHER <br/> TO BUILD <br/> <span>A BETT</span>ER FUTURE
+          WORKING <br /> TOGETHER <br /> TO BUILD <br /> <span>A BETT</span>ER
+          FUTURE
         </div>
       </motion.div>
       <motion.div
@@ -86,7 +87,9 @@ export default function Home() {
         <WindowOptions />
         <Navbar />
         <div className={styles["glitch-text"]}>
-          <span data-text="HERE" className={styles["here"]}>HERE</span>
+          <span data-text="HERE" className={styles["here"]}>
+            HERE
+          </span>
         </div>
       </motion.div>
 
@@ -99,7 +102,9 @@ export default function Home() {
         <WindowOptions />
         <Navbar />
         <div className={styles["glitch-text"]}>
-          <span data-text="STARTS" className={styles["starts"]}>STARTS</span>
+          <span data-text="STARTS" className={styles["starts"]}>
+            STARTS
+          </span>
         </div>
       </motion.div>
       <motion.div
@@ -114,6 +119,7 @@ export default function Home() {
           <span data-text="CHANGE" className={styles["change"]}>
             CHANGE
           </span>
+          <span data-text="CHANGE" className={styles["change-outline"]}></span>
         </div>
       </motion.div>
       <motion.div

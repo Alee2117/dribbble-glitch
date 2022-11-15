@@ -123,6 +123,89 @@ $steps: 20;
 
     .glitch-text {
       font-size: 5rem;
+
+      .change {
+        position: relative;
+        margin: 0 auto;
+        color: $primaryColor;
+        font-size: 80px;
+        font-family: "Exo", sans-serif;
+        font-size: 7rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        transform: scale3d(1, 1, 1);
+
+        &::before,
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          overflow: hidden;
+          background: $secondaryColor;
+          color: $primaryColor;
+          clip: rect(0, 900px, 0, 0);
+        }
+
+        &::before {
+          left: 7px;
+          text-shadow: 1px 5 green;
+          animation: glitch-effect 3s infinite linear alternate-reverse;
+        }
+
+        &::after {
+          left: 3px;
+          text-shadow: -1px 0 red;
+          animation: glitch-effect 2s infinite linear alternate-reverse;
+        }
+      }
+
+      .change-outline {
+        font-size: 7rem;
+
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          left: 9px;
+          top: -105px;
+          -webkit-text-stroke: 1px black;
+          color: transparent;
+          animation: outlineGlitch 1s infinite ease-out reverse;
+        }
+
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          left: 9px;
+          top: 155px;
+          -webkit-text-stroke: 1px black;
+          color: transparent;
+          animation: outlineGlitch 0.5s infinite linear alternate-reverse; 
+        }
+
+        @keyframes outlineGlitch {
+          0% {
+            -webkit-text-stroke: 1px black;
+          }
+          20% {
+            -webkit-text-stroke: 1px transparent;
+          }
+          25% {
+            -webkit-text-stroke: 1px black;
+          }
+          27% {
+            -webkit-text-stroke: 1px transparent;
+          }
+          90% {
+            -webkit-text-stroke: 1px black;
+          }
+          100% {
+            -webkit-text-stroke: 1px transparent;
+          }
+        }
+      }
     }
   }
 
@@ -289,44 +372,6 @@ $steps: 20;
   transform: translate(-50%, -50%);
   font-weight: bold;
   padding-top: 1.5rem;
-
-  .change {
-    position: relative;
-    margin: 0 auto;
-    color: $primaryColor;
-    font-size: 80px;
-    font-family: "Exo", sans-serif;
-    font-size: 7rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
-    transform: scale3d(1, 1, 1);
-
-    &::before,
-    &::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      overflow: hidden;
-      background: $secondaryColor;
-      color: $primaryColor;
-      clip: rect(0, 900px, 0, 0);
-    }
-
-    &::before {
-      left: 7px;
-      text-shadow: 1px 5 green;
-      animation: glitch-effect 3s infinite linear alternate-reverse;
-    }
-
-    &::after {
-      left: 3px;
-      text-shadow: -1px 0 red;
-      animation: glitch-effect 2s infinite linear alternate-reverse;
-    }
-  }
 
   .starts {
     animation: glitch 1s linear infinite;
