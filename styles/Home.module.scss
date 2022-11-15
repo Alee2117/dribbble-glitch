@@ -2,6 +2,8 @@ $primaryColor: hsl(0, 0%, 13%);
 $secondaryColor: hsl(0, 0%, 89%);
 $steps: 20;
 
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
 @font-face {
   font-family: "alien-one";
   src: url("../public/fonts/Glipervelz-Origy\ FULL.ttf");
@@ -87,12 +89,24 @@ $steps: 20;
     border-left: 2px solid hsl(220, 2%, 30%);
     border-right: 2px solid hsl(220, 2%, 30%);
     border-bottom: 2px solid hsl(220, 2%, 30%);
-    // font-family: "alien-one";
     grid-column: 9/10;
     grid-row: 2/4;
     background-color: hsl(0, 0%, 89%);
     overflow: hidden;
     position: relative;
+
+    .text-content {
+      font-family: "Abel", sans-serif;
+      font-size: 1.9rem;
+      padding-left: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+
+      span {
+        text-decoration: underline;
+      }
+    }
   }
 
   .md-text-window-one {
@@ -166,6 +180,7 @@ $steps: 20;
       .marquee-three {
         height: 100%;
         font-family: "alien-two";
+        letter-spacing: 2px;
 
         &::before {
           background: linear-gradient(
@@ -207,12 +222,15 @@ $steps: 20;
 
     .glitch-text {
       font-size: 8rem;
+      top: 43%;
+      left: 53%;
 
       .rise {
         color: transparent;
         text-shadow: 0 0 20px hsl(0, 0%, 90%);
         position: relative;
         letter-spacing: 20px;
+        animation: spoopy 1s ease-in-out infinite alternate;
 
         &::before {
           content: attr(data-text);
@@ -225,6 +243,7 @@ $steps: 20;
           font-size: 12rem;
           letter-spacing: 20px;
           color: transparent;
+          animation: bigSpoopy 2s ease-in-out infinite alternate;
         }
 
         &::after {
@@ -234,6 +253,29 @@ $steps: 20;
           left: 0;
           right: 0;
           text-shadow: -12px 0 18px hsl(0, 0%, 100%);
+        }
+
+        @keyframes spoopy {
+          0% {
+            text-shadow: 12px 0 30px hsl(285, 4%, 20%);
+          }
+          80% {
+            text-shadow: -12px 0 18px hsl(0, 0%, 100%);
+          }
+          100% {
+            text-shadow: 12px 0 30px hsl(285, 4%, 20%);
+          }
+        }
+
+        @keyframes bigSpoopy {
+          10% {
+            font-size: 11rem;
+            text-shadow: 12px 0 30px hsl(300, 1%, 33%);
+          }
+
+          50% {
+            font-size: 13rem;
+          }
         }
       }
     }
@@ -367,21 +409,20 @@ $steps: 20;
       left: 2px;
       text-shadow: -1px 0 red;
       top: 0;
-      color: white;
+      color: hsl(0, 0%, 12%);
       background: hsl(0, 0%, 89%);
       overflow: hidden;
       clip: rect(0, 900px, 0, 0);
       animation: noise-anim 2s infinite linear alternate-reverse;
     }
 
-  
     &::before {
       content: attr(data-text);
       position: absolute;
       left: -2px;
       text-shadow: 1px 0 blue;
       top: 0;
-      color: white;
+      color: hsl(0, 0%, 10%);
       background: hsl(0, 0%, 89%);
       overflow: hidden;
       clip: rect(0, 900px, 0, 0);
@@ -393,7 +434,7 @@ $steps: 20;
     $steps: 20;
     @for $i from 0 through $steps {
       #{percentage($i*(1/$steps))} {
-        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+        clip: rect(random(100) + px, 9999px, random(200) + px, 0);
       }
     }
   }
@@ -402,7 +443,7 @@ $steps: 20;
     $steps: 20;
     @for $i from 0 through $steps {
       #{percentage($i*(1/$steps))} {
-        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+        clip: rect(random(100) + px, 9999px, random(200) + px, 0);
       }
     }
   }
@@ -410,7 +451,7 @@ $steps: 20;
   @keyframes glitch-effect {
     @for $i from 0 through $steps {
       #{percentage($i*(1/$steps))} {
-        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+        clip: rect(random(100) + px, 9999px, random(200) + px, 0);
       }
     }
   }

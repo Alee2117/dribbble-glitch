@@ -51,7 +51,10 @@ export default function Home() {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <WindowOptions />
-        <Navbar />
+        <Navbar/>
+        <div className={styles["text-content"]}>
+          WORKING <br/> TOGETHER <br/> TO BUILD <br/> <span>A BETT</span>ER FUTURE
+        </div>
       </motion.div>
       <motion.div
         className={styles["md-blank-window"]}
