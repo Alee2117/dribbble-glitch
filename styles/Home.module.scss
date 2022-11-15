@@ -1,6 +1,7 @@
 $primaryColor: hsl(0, 0%, 13%);
 $secondaryColor: hsl(0, 0%, 89%);
 $steps: 20;
+$breakpointLg: 1760px;
 
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
@@ -15,11 +16,20 @@ $steps: 20;
 }
 
 .container {
-  min-height: 100vh;
+  max-height: 100vh;
   background-color: hsl(0, 0%, 89%);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
+
+  .glitch-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    padding-top: 1.5rem;
+  }
 
   .main-window {
     border-left: 2px solid hsl(220, 2%, 30%);
@@ -83,6 +93,16 @@ $steps: 20;
         }
       }
     }
+
+    @media (max-width: $breakpointLg) {
+      grid-column: 2/12;
+      grid-row: 2/12;
+      margin-top: -1rem;
+
+      .text-content {
+        height: 91%;
+      }
+    }
   }
 
   .tiny-window {
@@ -107,6 +127,16 @@ $steps: 20;
         text-decoration: underline;
       }
     }
+
+    @media (max-width: $breakpointLg) {
+      grid-column: 10;
+      grid-row: 2/4;
+      margin-top: -2rem;
+
+      .text-content {
+        font-size: 1.4rem;
+      }
+    }
   }
 
   .md-text-window-one {
@@ -122,15 +152,12 @@ $steps: 20;
     position: relative;
 
     .glitch-text {
-      font-size: 5rem;
-
       .change {
         position: relative;
         margin: 0 auto;
         color: $primaryColor;
-        font-size: 80px;
         font-family: "Exo", sans-serif;
-        font-size: 7rem;
+        font-size: 6.5rem;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.01em;
@@ -160,10 +187,23 @@ $steps: 20;
           text-shadow: -1px 0 red;
           animation: glitch-effect 2s infinite linear alternate-reverse;
         }
+
+        @keyframes glitch-effect {
+          @for $i from 0 through $steps {
+            #{percentage($i*(1/$steps))} {
+              clip: rect(random(100) + px, 9999px, random(200) + px, 0);
+            }
+          }
+        }
+
+        @media (max-width: $breakpointLg) {
+          font-size: 5rem;
+          grid-column: 6/9;
+        }
       }
 
       .change-outline {
-        font-size: 7rem;
+        font-size: 6.5rem;
 
         &::before {
           content: attr(data-text);
@@ -182,7 +222,7 @@ $steps: 20;
           top: 155px;
           -webkit-text-stroke: 1px black;
           color: transparent;
-          animation: outlineGlitch 0.5s infinite linear alternate-reverse; 
+          animation: outlineGlitch 0.5s infinite linear alternate-reverse;
         }
 
         @keyframes outlineGlitch {
@@ -205,7 +245,23 @@ $steps: 20;
             -webkit-text-stroke: 1px transparent;
           }
         }
+
+        @media (max-width: $breakpointLg) {
+          font-size: 5rem;
+
+          &::before {
+            top: -66px;
+          }
+
+          &::after {
+            top: 116px;
+          }
+        }
       }
+    }
+
+    @media (max-width: $breakpointLg) {
+      grid-column: 5/9;
     }
   }
 
@@ -222,7 +278,81 @@ $steps: 20;
     position: relative;
 
     .glitch-text {
-      font-size: 5rem;
+
+      .starts {
+        animation: glitch 1s linear infinite;
+        position: relative;
+        font-size: 7.5rem;
+
+        &::before,
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          left: 0;
+        }
+
+        &::before {
+          animation: glitchTop 1s linear infinite;
+          clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+
+        &::after {
+          animation: glitchBotom 1.5s linear infinite;
+          clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+          -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch {
+          2%,
+          64% {
+            transform: translate(2px, 0) skew(0deg);
+          }
+          4%,
+          60% {
+            transform: translate(-2px, 0) skew(0deg);
+          }
+          62% {
+            transform: translate(0, 0) skew(5deg);
+          }
+        }
+
+        @keyframes glitchTop {
+          2%,
+          64% {
+            transform: translate(2px, -2px);
+          }
+          4%,
+          60% {
+            transform: translate(-2px, 2px);
+          }
+          62% {
+            transform: translate(13px, -1px) skew(-13deg);
+          }
+        }
+
+        @keyframes glitchBotom {
+          2%,
+          64% {
+            transform: translate(-2px, 0);
+          }
+          4%,
+          60% {
+            transform: translate(-2px, 0);
+          }
+          62% {
+            transform: translate(-22px, 5px) skew(21deg);
+          }
+        }
+
+        @media (max-width: $breakpointLg) {
+          font-size: 5rem;
+        }
+      }
+    }
+
+    @media (max-width: $breakpointLg) {
+      grid-column: 7/11;
     }
   }
 
@@ -240,7 +370,62 @@ $steps: 20;
     position: relative;
 
     .glitch-text {
-      font-size: 8rem;
+      .here {
+        color: black;
+        font-size: 100px;
+        position: relative;
+        width: 400px;
+        margin: 0 auto;
+        font-size: 9.5rem;
+
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          left: 2px;
+          text-shadow: -1px 0 red;
+          top: 0;
+          color: hsl(0, 0%, 12%);
+          background: hsl(0, 0%, 89%);
+          overflow: hidden;
+          clip: rect(0, 900px, 0, 0);
+          animation: noise-anim 2s infinite linear alternate-reverse;
+        }
+
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          left: -2px;
+          text-shadow: 1px 0 blue;
+          top: 0;
+          color: hsl(0, 0%, 10%);
+          background: hsl(0, 0%, 89%);
+          overflow: hidden;
+          clip: rect(0, 900px, 0, 0);
+          animation: noise-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes noise-anim {
+          $steps: 20;
+          @for $i from 0 through $steps {
+            #{percentage($i*(1/$steps))} {
+              clip: rect(random(100) + px, 9999px, random(200) + px, 0);
+            }
+          }
+        }
+
+        @keyframes noise-anim-2 {
+          $steps: 20;
+          @for $i from 0 through $steps {
+            #{percentage($i*(1/$steps))} {
+              clip: rect(random(100) + px, 9999px, random(200) + px, 0);
+            }
+          }
+        }
+
+        @media (max-width: $breakpointLg) {
+          font-size: 5rem;
+        }
+      }
     }
   }
 
@@ -248,7 +433,6 @@ $steps: 20;
     border-left: 2px solid hsl(220, 2%, 30%);
     border-right: 2px solid hsl(220, 2%, 30%);
     border-bottom: 2px solid hsl(220, 2%, 30%);
-    // font-family: "alien-one";
     grid-column: 6/8;
     grid-row: 6/11;
     background-color: hsl(0, 0%, 89%);
@@ -289,7 +473,6 @@ $steps: 20;
     border-left: 2px solid hsl(0, 0%, 7%);
     border-right: 2px solid hsl(0, 0%, 7%);
     border-bottom: 2px solid hsl(0, 0%, 7%);
-    // font-family: "alien-one";
     grid-column: 4/7;
     grid-row: 5/9;
     background-color: hsl(0, 0%, 7%);
@@ -301,10 +484,10 @@ $steps: 20;
     video {
       object-fit: cover;
       width: 100%;
+      height: 100%;
     }
 
     .glitch-text {
-      font-size: 8rem;
       top: 43%;
       left: 53%;
 
@@ -314,6 +497,7 @@ $steps: 20;
         position: relative;
         letter-spacing: 20px;
         animation: spoopy 1s ease-in-out infinite alternate;
+        font-size: 7.5rem;
 
         &::before {
           content: attr(data-text);
@@ -323,7 +507,7 @@ $steps: 20;
           transform: translate(-50%, -50%);
           text-shadow: 12px 0 30px hsl(285, 4%, 20%);
           -webkit-text-stroke-color: initial;
-          font-size: 12rem;
+          font-size: 11.5rem;
           letter-spacing: 20px;
           color: transparent;
           animation: bigSpoopy 2s ease-in-out infinite alternate;
@@ -352,152 +536,42 @@ $steps: 20;
 
         @keyframes bigSpoopy {
           10% {
-            font-size: 11rem;
+            font-size: 10.5rem;
             text-shadow: 12px 0 30px hsl(300, 1%, 33%);
           }
 
           50% {
-            font-size: 13rem;
+            font-size: 12.5rem;
+          }
+        }
+
+        @media (max-width: $breakpointLg) {
+          font-size: 3.5rem;
+
+          &::before {
+            font-size: 5rem;
+            animation: smallerSpoopy 2s ease-in-out infinite alternate;
+          }
+
+          &::after {
+            text-shadow: -12px 0 11px hsl(0, 0%, 100%);
+          }
+
+          @keyframes smallerSpoopy {
+            10% {
+              font-size: 5rem;
+              text-shadow: 12px 0 30px hsl(300, 1%, 33%);
+            }
+
+            50% {
+              font-size: 6rem;
+            }
           }
         }
       }
     }
-  }
-}
-
-.glitch-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  padding-top: 1.5rem;
-
-  .starts {
-    animation: glitch 1s linear infinite;
-    position: relative;
-    font-size: 8rem;
-
-    &::before,
-    &::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-    }
-
-    &::before {
-      animation: glitchTop 1s linear infinite;
-      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    }
-
-    &::after {
-      animation: glitchBotom 1.5s linear infinite;
-      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-      -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    }
-
-    @keyframes glitch {
-      2%,
-      64% {
-        transform: translate(2px, 0) skew(0deg);
-      }
-      4%,
-      60% {
-        transform: translate(-2px, 0) skew(0deg);
-      }
-      62% {
-        transform: translate(0, 0) skew(5deg);
-      }
-    }
-
-    @keyframes glitchTop {
-      2%,
-      64% {
-        transform: translate(2px, -2px);
-      }
-      4%,
-      60% {
-        transform: translate(-2px, 2px);
-      }
-      62% {
-        transform: translate(13px, -1px) skew(-13deg);
-      }
-    }
-
-    @keyframes glitchBotom {
-      2%,
-      64% {
-        transform: translate(-2px, 0);
-      }
-      4%,
-      60% {
-        transform: translate(-2px, 0);
-      }
-      62% {
-        transform: translate(-22px, 5px) skew(21deg);
-      }
-    }
-  }
-
-  .here {
-    color: black;
-    font-size: 100px;
-    position: relative;
-    width: 400px;
-    margin: 0 auto;
-    font-size: 10rem;
-
-    &::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 2px;
-      text-shadow: -1px 0 red;
-      top: 0;
-      color: hsl(0, 0%, 12%);
-      background: hsl(0, 0%, 89%);
-      overflow: hidden;
-      clip: rect(0, 900px, 0, 0);
-      animation: noise-anim 2s infinite linear alternate-reverse;
-    }
-
-    &::before {
-      content: attr(data-text);
-      position: absolute;
-      left: -2px;
-      text-shadow: 1px 0 blue;
-      top: 0;
-      color: hsl(0, 0%, 10%);
-      background: hsl(0, 0%, 89%);
-      overflow: hidden;
-      clip: rect(0, 900px, 0, 0);
-      animation: noise-anim-2 3s infinite linear alternate-reverse;
-    }
-  }
-
-  @keyframes noise-anim {
-    $steps: 20;
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        clip: rect(random(100) + px, 9999px, random(200) + px, 0);
-      }
-    }
-  }
-
-  @keyframes noise-anim-2 {
-    $steps: 20;
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        clip: rect(random(100) + px, 9999px, random(200) + px, 0);
-      }
-    }
-  }
-
-  @keyframes glitch-effect {
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        clip: rect(random(100) + px, 9999px, random(200) + px, 0);
-      }
+    @media (max-width: $breakpointLg) {
+      margin-block: 2rem;
     }
   }
 }
