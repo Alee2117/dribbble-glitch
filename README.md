@@ -1,4 +1,4 @@
-found a mockup on dribbble and wanted to try my hand at it to practice animations. Using Nextjs and SCSS. Credit for Dribbble mockup, "Visual Jams" here https://dribbble.com/shots/6103283-Change-Starts-Here
+found a mockup on dribbble and wanted to try my hand at it to practice animations. Using Nextjs and SCSS. Credit for Dribbble mockup, "Visual Jams" here https://dribbble.com/shots/6103283-Change-Starts-Here/attachments/6103283?mode=media
 
 Deployed on Vercel
 http://dribble-glitch.vercel.app/
